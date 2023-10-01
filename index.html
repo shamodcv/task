@@ -16,7 +16,7 @@
                 <input id="txt" class="form-control" type="text" placeholder="Input Something">
                 <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>
             </div>
-    
+
             <!--Case Two-->
             <div class="col">
                 <h1>Input an Image Url</h1>
@@ -26,16 +26,22 @@
             </div>
         </section>
     </section>
-    
+
     <script>
-        document.getElementById("txt").addEventListener("keyup", function(event) {
-            document.querySelector('h1').innerText=(document.querySelector("#txt").value);
+        document.getElementById("txt").addEventListener("keyup", function (event) {
+            document.querySelector('h1').innerText = (document.querySelector("#txt").value);
         });
-    
-        document.querySelector("#btn1").addEventListener("click",function(){
-            document.querySelector('h1').style.color='Red';
+
+        document.querySelector("#btn1").addEventListener("click", function () {
+            document.querySelector('h1').style.color = 'Red';
+        });
+
+        document.getElementById("btn2").addEventListener("click", function () {
+            document.getElementById("img").innerHTML = '<img src="' + document.getElementById("url").value + '">';
         });
     </script>
-    </body>
+
+    </script>
+</body>
 
 </html>
