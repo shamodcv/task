@@ -8,37 +8,51 @@
 </head>
 
 <body>
-    <section class="container mt-3">
-        <section class="row">
-            <!--Case One-->
-            <div class="col">
-                <h1>Hello There How are you.?</h1>
-                <input id="txt" class="form-control" type="text" placeholder="Input Something">
-                <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>
+    <section class="container">
+        <h1>Task Generator.!</h1>
+        <div class="row">
+            <div class="col-4">
+                <input id="txt" class="form-control" type="text" placeholder="Input a Task">
+                <button id="btn" class="btn btn-danger mt-2">Add Task</button>
             </div>
-
-            <!--Case Two-->
-            <div class="col">
-                <h1>Input an Image Url</h1>
-                <input id="url" class="form-control" type="url" placeholder="Input Image URL">
-                <div id="img" style="height: 50vh" class="mt-2 border shadow"></div>
-                <button id="btn2" class="mt-2 btn btn-danger">Change Image</button>
+            <div class="offset-1 col-3 shadow overflow-x-hidden" style="height: 70vh">
+                <ol id="list" class="list-group p-2">
+                    <li class="list-group-item">Task One</li>
+                </ol>
             </div>
-        </section>
+        </div>
     </section>
 
     <script>
-        document.getElementById("txt").addEventListener("keyup", function (event) {
-            document.querySelector('h1').innerText = (document.querySelector("#txt").value);
+        //    document.getElementById("txt").addEventListener("keyup", function (event) {
+        //         document.querySelector('h1').innerText = (document.querySelector("#txt").value);
+        //     });
+
+        //     document.querySelector("#btn1").addEventListener("click", function () {
+        //         document.querySelector('h1').style.color = 'Red';
+        //     });
+
+        //     document.getElementById("btn2").addEventListener("click", function () {
+        //         document.getElementById("img").innerHTML = '<img src="' + document.getElementById("url").value + '">';
+        //     });
+        //     document.querySelector("#btn2").addEventListener('click',function(){
+        //     var typeValue=document.querySelector("#url").value;
+        //     var divContainer=document.querySelector("#img");
+
+        //     divContainer.style.background=`url(${typeValue})`;
+        //     divContainer.style.backgroundPosition='center';
+        //     divContainer.style.backgroundSize='contain';
+        //     divContainer.style.backgroundRepeat='no-repeat';
+        // })
+
+        document.querySelector("#btn").addEventListener("click", function () {
+            let input = document.querySelector("#txt").value;
+            const newListItem = document.createElement("li");
+            newListItem.textContent = input;
+
+            document.querySelector("#list").appendChild(newListItem).className = "list-group-item";
         });
 
-        document.querySelector("#btn1").addEventListener("click", function () {
-            document.querySelector('h1').style.color = 'Red';
-        });
-
-        document.getElementById("btn2").addEventListener("click", function () {
-            document.getElementById("img").innerHTML = '<img src="' + document.getElementById("url").value + '">';
-        });
     </script>
 
     </script>
